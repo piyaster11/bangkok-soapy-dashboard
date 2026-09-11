@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bangkok Gentlemen Soapy — Price Dashboard</title>
-</head>
-<body>
-<p>See repo file after full push.</p>
-</body>
-</html>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Bangkok Gentlemen Soapy — Price Dashboard</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2f;--panel-2:#182238;--line:#2a3758;--gold:#d4b06a;--gold-2:#f0d59a;--text:#e8edf7;--muted:#8b97b3;--up:#3dd68c;--blue:#6aa8ff;--pink:#e08bb8;--teal:#4fd1c5;--caviar:#c9a0ff;--tara:#ffb347}
+*{box-sizing:border-box}body{margin:0;font-family:Segoe UI,Helvetica Neue,Arial,sans-serif;background:radial-gradient(1200px 600px at 10% -10%,#1b2748 0%,var(--bg) 45%);color:var(--text);min-height:100vh}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 20px 48px}
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:22px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.eyebrow{color:var(--gold);letter-spacing:.18em;font-size:11px;font-weight:700;text-transform:uppercase}
+h1{margin:4px 0 0;font-size:28px}.sub,.asof,.note,.range{color:var(--muted);font-size:12px}
+.asof{text-align:right;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px}.asof b{color:var(--gold-2);display:block;font-size:14px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0 20px}
+.kpi{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.kpi .lbl{color:var(--muted);font-size:11px;text-transform:uppercase}.kpi .val{font-size:28px;font-weight:700;margin:6px 0 2px}.kpi .chg{font-size:12px;color:var(--up)}.flat{color:var(--muted)!important}
+.grid-2{display:grid;grid-template-columns:1.15fr .85fr;gap:12px;margin-bottom:12px}
+.grid-6{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}.card h2{margin:0 0 12px;font-size:14px;color:var(--gold-2)}
+table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;color:var(--muted);font-size:11px;text-transform:uppercase;padding:8px;border-bottom:1px solid var(--line)}td{padding:9px 8px;border-bottom:1px solid rgba(42,55,88,.6)}.num{font-variant-numeric:tabular-nums;text-align:right}.venue{font-weight:650}.tag{font-size:10px;padding:2px 7px;border-radius:99px;background:#243153;color:var(--muted)}
+.bars{display:flex;align-items:flex-end;gap:8px;height:160px}.bar-col{flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end}.bar{width:100%;max-width:36px;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,var(--gold-2),#9a7a3a)}.bar-lbl{font-size:10px;color:var(--muted);margin-top:6px;text-align:center}.bar-val{font-size:11px;color:var(--gold-2);margin-bottom:4px}
+.price{font-size:22px;font-weight:700}.meter{height:6px;background:#243153;border-radius:99px;overflow:hidden}.meter>span{display:block;height:100%}
+footer{margin-top:18px;color:var(--muted);font-size:11px}
+@media(max-width:980px){.kpis,.grid-2,.grid-6{grid-template-columns:1fr 1fr}}@media(max-width:640px){.kpis,.grid-2,.grid-6{grid-template-columns:1fr}}
+</style></head>
+<body><div class="wrap">
+<header><div><div class="eyebrow">Ratchada + Phatthanakan</div><h1>Bangkok Soapy Price Dashboard</h1><div class="sub">Maria · La Belle · Poseidon · Lalisa · Black Caviar · Tara · last 12 months</div></div>
+<div class="asof"><b>11 Sep 2026</b>House fee only · 6-venue index</div></header>
+<section class="kpis">
+<div class="kpi"><div class="lbl">Composite index</div><div class="val">112</div><div class="chg">▲ +12 vs Sep 2025 = 100</div></div>
+<div class="kpi"><div class="lbl">12-month move</div><div class="val">+12%</div><div class="chg">Menus sticky · mid-tier up</div></div>
+<div class="kpi"><div class="lbl">Basket typical now</div><div class="val">8,083</div><div class="chg flat">THB avg of 6 typicals</div></div>
+<div class="kpi"><div class="lbl">Ceiling</div><div class="val">40k</div><div class="chg flat">Caviar + Tara top tier</div></div>
+</section>
+<section class="grid-2"><div class="card"><h2>Composite index · Sep 2025 = 100</h2>
+<svg viewBox="0 0 640 220" width="100%" height="220"><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d4b06a" stop-opacity="0.35"/><stop offset="100%" stop-color="#d4b06a" stop-opacity="0"/></linearGradient></defs>
+<g stroke="#2a3758" stroke-width="1"><line x1="50" y1="20" x2="620" y2="20"/><line x1="50" y1="70" x2="620" y2="70"/><line x1="50" y1="120" x2="620" y2="120"/><line x1="50" y1="170" x2="620" y2="170"/></g>
+<g fill="#8b97b3" font-size="11" font-family="Segoe UI,sans-serif"><text x="8" y="24">120</text><text x="8" y="74">110</text><text x="8" y="124">100</text><text x="8" y="174">90</text><text x="50" y="208">Sep 25</text><text x="175" y="208">Dec 25</text><text x="300" y="208">Mar 26</text><text x="425" y="208">Jun 26</text><text x="550" y="208">Sep 26</text></g>
+<polygon fill="url(#fill)" points="70,120 190,80 310,80 430,70 550,60 550,170 70,170"/>
+<polyline fill="none" stroke="#d4b06a" stroke-width="3" points="70,120 190,80 310,80 430,70 550,60"/>
+<g fill="#f0d59a"><circle cx="70" cy="120" r="4.5"/><circle cx="190" cy="80" r="4.5"/><circle cx="310" cy="80" r="4.5"/><circle cx="430" cy="70" r="4.5"/><circle cx="550" cy="60" r="4.5"/></g>
+<g fill="#f0d59a" font-size="12" font-weight="700" font-family="Segoe UI,sans-serif"><text x="62" y="110">100</text><text x="178" y="70">108</text><text x="298" y="70">108</text><text x="418" y="60">110</text><text x="538" y="50">112</text></g></svg></div>
+<div class="card"><h2>Typical pick · Sep 2026</h2><div class="bars">
+<div class="bar-col"><div class="bar-val">8.2k</div><div class="bar" style="height:75%"></div><div class="bar-lbl">Maria</div></div>
+<div class="bar-col"><div class="bar-val">6.0k</div><div class="bar" style="height:55%;background:linear-gradient(180deg,#e08bb8,#8a4d6e)"></div><div class="bar-lbl">La Belle</div></div>
+<div class="bar-col"><div class="bar-val">4.3k</div><div class="bar" style="height:39%;background:linear-gradient(180deg,#6aa8ff,#355a96)"></div><div class="bar-lbl">Poseidon</div></div>
+<div class="bar-col"><div class="bar-val">9.0k</div><div class="bar" style="height:82%;background:linear-gradient(180deg,#4fd1c5,#2a7a74)"></div><div class="bar-lbl">Lalisa</div></div>
+<div class="bar-col"><div class="bar-val">10k</div><div class="bar" style="height:91%;background:linear-gradient(180deg,#c9a0ff,#6b4aa0)"></div><div class="bar-lbl">Caviar</div></div>
+<div class="bar-col"><div class="bar-val">11k</div><div class="bar" style="height:100%;background:linear-gradient(180deg,#ffb347,#b36b16)"></div><div class="bar-lbl">Tara</div></div>
+</div></div></section>
+<section class="grid-6">
+<div class="card"><div class="tag">Premium · Soi 16</div><h2>Maria</h2><div class="price">8,200</div><div class="range">Door 5,100 · Top 13.5k–22k</div><div class="meter"><span style="width:75%;background:var(--gold)"></span></div><p class="note">YoY 109</p></div>
+<div class="card"><div class="tag">Mid · Petchaburi</div><h2>La Belle</h2><div class="price">6,000</div><div class="range">Door 3,300 · Top 8.0–8.5k</div><div class="meter"><span style="width:55%;background:var(--pink)"></span></div><p class="note">YoY 120</p></div>
+<div class="card"><div class="tag">Classic · Ratchada</div><h2>Poseidon</h2><div class="price">4,300</div><div class="range">Door 2,200 · Top ~10k</div><div class="meter"><span style="width:39%;background:var(--blue)"></span></div><p class="note">YoY 113</p></div>
+<div class="card"><div class="tag">High-end · Soi 17</div><h2>Lalisa 17</h2><div class="price">9,000</div><div class="range">Door 4,300 · Top 20.3k</div><div class="meter"><span style="width:82%;background:var(--teal)"></span></div><p class="note">YoY 113</p></div>
+<div class="card"><div class="tag">Executive · Soi 7</div><h2>Black Caviar</h2><div class="price">10,000</div><div class="range">Door 5,000–6,200 · Top 16k–40k</div><div class="meter"><span style="width:91%;background:var(--caviar)"></span></div><p class="note">YoY 111 · membership 30/50/100k</p></div>
+<div class="card"><div class="tag">Ultra · Phatthanakan 46</div><h2>Tara</h2><div class="price">11,000</div><div class="range">Door 6,900 · Top 40k · penthouse 20k/3hr</div><div class="meter"><span style="width:100%;background:var(--tara)"></span></div><p class="note">YoY 110 · official floor 6,900</p></div>
+</section>
+<section class="card" style="margin-bottom:12px"><h2>Quarterly typical house fee (THB)</h2>
+<table><thead><tr><th>Period</th><th class="num">Maria</th><th class="num">La Belle</th><th class="num">Poseidon</th><th class="num">Lalisa</th><th class="num">Caviar</th><th class="num">Tara</th><th class="num">Index</th></tr></thead>
+<tbody>
+<tr><td>Q3 2025</td><td class="num">7,500</td><td class="num">5,000</td><td class="num">3,800</td><td class="num">8,000</td><td class="num">9,000</td><td class="num">10,000</td><td class="num"><b>100</b></td></tr>
+<tr><td>Q4 2025</td><td class="num">9,000</td><td class="num">5,200</td><td class="num">4,000</td><td class="num">8,500</td><td class="num">9,500</td><td class="num">10,500</td><td class="num"><b>108</b></td></tr>
+<tr><td>Q1 2026</td><td class="num">8,000</td><td class="num">5,500</td><td class="num">4,200</td><td class="num">8,500</td><td class="num">9,500</td><td class="num">11,000</td><td class="num"><b>108</b></td></tr>
+<tr><td>Q2 2026</td><td class="num">8,000</td><td class="num">5,800</td><td class="num">4,200</td><td class="num">9,000</td><td class="num">9,800</td><td class="num">11,000</td><td class="num"><b>110</b></td></tr>
+<tr><td>Q3 2026</td><td class="num">8,200</td><td class="num">6,000</td><td class="num">4,300</td><td class="num">9,000</td><td class="num">10,000</td><td class="num">11,000</td><td class="num"><b>112</b></td></tr>
+</tbody></table></section>
+<section class="card"><h2>Black Caviar + Tara</h2>
+<p class="note"><b>Black Caviar</b> (Ratchada Soi 7): 5,000–20,000 working band, bracelet to 40,000. Typical pick ~10,000. Membership 30k/50k/100k.<br><br><b>Tara</b> (Phatthanakan 46): official 90-min from 6,900 to 14,900 deluxe, suites to 40,000. Penthouse 20,000 / 3hr. Typical solo ~11,000 before tip. Grab from Thong Lo / Hua Mak.</p></section>
+<footer>Sources Sep 2026. Confirm the desk card. Adult venues · 18+.</footer>
+</div></body></html>
